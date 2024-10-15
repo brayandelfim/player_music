@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css" />
+  <title>music - brayan</title>
+</head>
+<body>
+  <div class="player">
+    <div class="left">
+      <div class="disk" id="disk-img">
+        
+        <span></span>
+      </div>
+    </div>
+    <div class="right">
+      <div class="button prev">
+        <button class="action-buttom" data-action="prev">
+          <span class="triangle"></span>
+          <span class="triangle"></span>
+        </button>
+      </div>
+      <div class="button play">
+        <button class="action-buttom" data-action="play">
+          <span class="triangle"></span>
+        </button>
+      </div>
+      <div class="button next">
+        <button class="action-buttom" data-action="next">
+          <span class="triangle"></span>
+          <span class="triangle"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <audio hidden id="player">
+  </audio>
+</body>
+</html>
+
+<script src="./player.js"></script>

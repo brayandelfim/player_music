@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #fef1f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.player {
+  width: 270px;
+  height: 70px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 20px 0 rgba(0, 0, 0, .12);
+  display: flex;
+}
+
+.player .left {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.player .left .disk {
+  width: 80px;
+  height: 80px;
+  background-color: #292731;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  margin-top: -25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player.playing .left .disk {
+  animation: rotation 10s linear infinite;
+}
+
+@keyframes rotation {
+  from {-webkit-transform: rotate(0deg);}
+  to   {-webkit-transform: rotate(359deg);}
+}
+
+.player .left .disk span {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.player .right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.player .right .button button {
+  border: none;
+  background: none;
+}
+
+.player .triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 11px solid #bdbec3;
+}
+
+.player .right .button.play .triangle {
+  rotate: 90deg;
+  transform: scale(1.2);
+}
+
+.player.playing .right .button.play .triangle {
+  border-bottom-color: #66e94c;
+}
+
+.player .right .button.prev .triangle {
+  rotate: -90deg;
+  margin-left: -11px;
+}
+
+.player .right .button.next .triangle {
+  rotate: 90deg;
+  margin-right: -11px;
+}
