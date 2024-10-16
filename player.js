@@ -5,15 +5,23 @@ const disk = document.getElementById("disk-img")
 const musicas = [
   {
     musica: "./music/1.mp3",
-    imagem: "./img/1.jpg"
+    imagem: "./img/1.jpg",
+    nome: "Criolo - Sucrilhos"
   },
   {
     musica: "./music/2.mp3",
-    imagem: "./img/2.jpg"
+    imagem: "./img/2.jpg",
+    nome: "Travis Scott - Sicko mode"
   },
   {
     musica: "./music/3.mp3",
-    imagem: "./img/3.jpg"
+    imagem: "./img/3.jpg",
+    nome: "Grupo Molejo - Brincadera de criança"
+  },
+  {
+    musica: "./music/4.mp3",
+    imagem: "./img/4.jpg",
+    nome: "AniRap -  Yuta okkotsu"
   }
 ]
 let musicaAtual = 0
@@ -54,7 +62,7 @@ function prev() {
 function next() {
   const novaPosicao = musicaAtual + 1
   
-  if(novaPosicao > 2) {
+  if(novaPosicao > musicas.length - 1) {
     return
   }
 
