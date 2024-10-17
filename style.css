@@ -2,11 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 body {
   background: #fef1f5;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -97,4 +99,35 @@ body {
 .player .right .button.next .triangle {
   rotate: 90deg;
   margin-right: -11px;
+}
+
+.list {
+  width: 300px;
+  height: 400px;
+  background: #fff;
+  margin-top: 50px;
+  border-radius: 16px;
+  overflow-x: auto;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list ul li {
+  padding: 0;
+}
+
+.list ul li a {
+  padding: 16px 24px;
+  display: block;
+  border-bottom: #ededed solid 1px;
+  font-size: 1em;
+  letter-spacing: -.04em;
+  cursor: pointer;
+}
+
+.list ul li a:hover {
+  background: #ededed;
 }
