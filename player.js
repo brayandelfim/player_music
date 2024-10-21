@@ -1,29 +1,52 @@
 const buttons = document.querySelectorAll('.action-buttom')
 const player = document.getElementById("player")
 const disk = document.getElementById("disk-img")
+const list = document.getElementById("list")
+
 
 const musicas = [
   {
     musica: "./music/1.mp3",
     imagem: "./img/1.jpg",
-    nome: "Criolo - Sucrilhos"
+    nome: "Sucrilhos",
+    autor: "criolo"
   },
   {
     musica: "./music/2.mp3",
     imagem: "./img/2.jpg",
-    nome: "Travis Scott - Sicko mode"
+    nome: "Sicko mode",
+    autor: "Travis Scott"
   },
   {
     musica: "./music/3.mp3",
     imagem: "./img/3.jpg",
-    nome: "Grupo Molejo - Brincadera de criança"
+    nome: "Still D.R.E ft. Snoop Dogg",
+    autor: "Snop Dogg"
   },
   {
     musica: "./music/4.mp3",
     imagem: "./img/4.jpg",
-    nome: "AniRap -  Yuta okkotsu"
+    nome: "Yuta okkotsu",
+    autor: "AniRap"
   }
 ]
+
+for(const index in musicas) {
+  const musica = musicas[index]
+  const item =`<li class="music-click" data-position="${index}"><a><b>(${musica.autor})</b>${musica.nome}</a></li>`;
+  list.innerHTML += item
+}
+
+const musicClick = document.querySelectorAll(".music-click")
+
+for (const element of musicClick) {
+  element.addEventListener("click", function(){
+    const position = this.getAttribute("data-position")
+    carrega(position);
+    player.play(); 
+  })
+}
+
 let musicaAtual = 0
 
 function carrega(posicao) {
@@ -34,6 +57,8 @@ function carrega(posicao) {
   player.src = musica.musica
   player.load();
 }
+
+
 
 carrega(0);
 
