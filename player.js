@@ -43,7 +43,7 @@ for (const element of musicClick) {
   element.addEventListener("click", function(){
     const position = this.getAttribute("data-position")
     carrega(position);
-    player.play(); 
+    play(); 
   })
 }
 
@@ -63,14 +63,15 @@ function carrega(posicao) {
 carrega(0);
 
 function play() {
+  const disk = document.getElementsByClassName("player")[0]
+
   if(player.paused === true) {
     player.play();
+    disk.classList.add("playing")
   }else {
     player.pause()
+    disk.classList.remove("playing")
   }
-
-  const disk = document.getElementsByClassName("player")[0]
-  disk.classList.toggle("playing")
 }
 
 function prev() {
